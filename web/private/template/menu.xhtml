@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+      <p:growl id="Equipe"/>
+      <p:menubar>
+        <p:submenu label="Cadastros" icon="pi pi-file">
+            <p:submenu label="Cadastros" icon="pi pi-briefcase">
+                <p:menuitem value="Cadastro Equipe" action="#{equipeMB.novo()}" icon="pi pi-save" />
+                <p:menuitem value="Cadastro Piloto" action="#{pilotoMB.novo()}" icon="pi pi-save" />
+                <p:menuitem value="Cadastro Funcionario" action="#{funcionarioMB.novo()}" icon="pi pi-save" />
+            </p:submenu>       
+            <p:submenu label="Listagem" icon="pi pi-briefcase">
+                <p:menuitem value="Listagem Equipe" action="#{equipeMB.listagem()}" icon="pi pi-save" />
+                <p:menuitem value="Listagem Piloto" action="#{pilotoMB.listagem()}" icon="pi pi-save" />
+                <p:menuitem value="Listagem Funcionario" action="#{funcionarioMB.listagem()}" icon="pi pi-save" />
+            </p:submenu>
+            <p:separator />
+            <p:menuitem value="Sair" url="https://www.google.com/"/>
+        </p:submenu>
+          <p:submenu label="Grande Prêmio" icon="pi pi-file">
+            <p:menuitem value="Cadastro GP" action="#{corridaMB.novo()}" icon="pi pi-save" />
+            <p:menuitem value="Listagem GP" action="#{equipeMB.novo()}" icon="pi pi-save" /> 
+            <p:separator />
+            <p:menuitem value="Sair" url="https://www.google.com/"/>
+        </p:submenu>
+      </p:menubar>   
+    
+</html>

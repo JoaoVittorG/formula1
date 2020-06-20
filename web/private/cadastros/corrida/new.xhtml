@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Formula 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:growl id="growl" life="3000"/>
+            <label>ID:</label>
+            <p:inputText value="1" disabled="true"/>          
+            <br/>
+            <br/> 
+            
+            <label>Posição do piloto</label>
+            <p:inputText value="#{corridaMB.corrida.classificacao}"  required="true " />
+            <label>pilotos:</label>
+            <p:selectOneMenu id="piloto" value="#{corridaMB.corrida.piloto}" style="width: 41%"
+                                        required="true" requiredMessage="Equipe é obrigatória"
+                                        converter="entityConverter">
+                <f:selectItems value="#{pilotoMB.pilotos}" var="pilotos"
+                               itemLabel="#{pilotos.nomePiloto}" itemValue="#{pilotos}"/>
+            </p:selectOneMenu>
+            <br/>
+            <br/> 
+            <p:commandButton action="#{corridaMB.salvar()}" value="Salvar" update="growl"/>
+            <p:commandButton action="#{corridaMB.cancelar()}" value="Cancelar" immediate="true"/>
+            
+        </h:form>
+    </h:body> 
+</html>

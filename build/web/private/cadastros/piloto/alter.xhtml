@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Formula 1</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <label>Nome Piloto</label>
+            <p:inputText value="#{pilotoMB.piloto.nomePiloto}"/>
+            <br/>
+            <br/>
+            <label>Pontuação do piloto</label>
+            <p:inputText value="#{pilotoMB.piloto.pontuacaoPiloto}"/>
+            <br/>
+            <br/>
+            <label>Equipe</label>
+                        <p:selectOneMenu id="equipe" value="#{pilotoMB.piloto.equipe}" style="width: 98%"
+                                         required="true" requiredMessage="Equipe é obrigatório"
+                                         converter="entityConverter">
+                            <f:selectItems value="#{pilotoMB.equipes}" var="equipe"
+                                           itemLabel="#{equipe.nomeEquipe}" itemValue="#{equipe}"/>
+                        </p:selectOneMenu>
+            <p:commandButton action="#{pilotoMB.alterar()}" value="Alterar"/>
+            <p:commandButton action="#{pilotoMB.cancelar()}" value="Cancelar" immediate="true"/>
+        </h:form>
+    </h:body>
+</html>
